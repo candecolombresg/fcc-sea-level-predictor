@@ -12,18 +12,18 @@ class LinePlotTestCase(unittest.TestCase):
     def test_plot_title(self):
         actual = self.ax.get_title()
         expected = "Rise in Sea Level"
-        self.assertEqual(actual, expected, "Expected line plot title to be 'Rise in Sea Level'")
+        self.assertAlmostEqual(actual, expected, "Expected line plot title to be 'Rise in Sea Level'")
     
     def test_plot_labels(self):
         actual = self.ax.get_xlabel()
         expected = "Year"
-        self.assertEqual(actual, expected, "Expected line plot xlabel to be 'Year'")
+        self.assertAlmostEqual(actual, expected, "Expected line plot xlabel to be 'Year'")
         actual = self.ax.get_ylabel()
         expected = "Sea Level (inches)"
-        self.assertEqual(actual, expected, "Expected line plot ylabel to be 'Sea Level (inches)'")
+        self.assertAlmostEqual(actual, expected, "Expected line plot ylabel to be 'Sea Level (inches)'")
         actual = self.ax.get_xticks().tolist()
         expected = [1850.0, 1875.0, 1900.0, 1925.0, 1950.0, 1975.0, 2000.0, 2025.0, 2050.0, 2075.0]
-        self.assertEqual(actual, expected, "Expected x tick labels to be '1850.0, 1875.0, 1900.0, 1925.0, 1950.0, 1975.0, 2000.0, 2025.0, 2050.0, 2075.0'")
+        self.assertAlmostEqual(actual, expected, "Expected x tick labels to be '1850.0, 1875.0, 1900.0, 1925.0, 1950.0, 1975.0, 2000.0, 2025.0, 2050.0, 2075.0'")
 
     def test_plot_data_points(self):
         actual = self.ax.get_children()[0].get_offsets().data.tolist()
